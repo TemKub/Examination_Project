@@ -1,35 +1,19 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.clans {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    min-height: 100vh;
 }
 
-body {
-    background: black;
-}
-.container {
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
-}
-
-.container img {
-    width: 100%;
-    height: 100%;
+.clans img {
+    width: 100px;
+    height: 100px;
     object-fit: contain;
+    cursor: pointer;
+    transition: transform 0,3s;
 }
 
-.darkness {
-    --x: -500px;
-    --y: -500px;
-
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(
-            circle 400px at var(--x, -500px) var(--y, -500px),
-            transparent 0%,
-            black 100%
-    );
-    pointer-events: none;
+.clans img:hover {
+    transform: scale(1.2);
 }
