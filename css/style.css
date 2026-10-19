@@ -2,18 +2,57 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 80px;
+    gap: 30px;
     min-height: 100vh;
 }
 
-.clans img {
-    width: 100px;
+.clan {
+    width: 180px;
     height: 100px;
-    object-fit: contain;
-    cursor: pointer;
-    transition: transform 0,3s;
+    border: 2px solid orange;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s;
 }
 
-.clans img:hover {
-    transform: scale(1.2);
+.clan img {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+}
+
+.clan img [alt="Uzumaki"] {
+    transform: scale(1.4);
+}
+
+.clan:hover {
+    transform: scale(1.1);
+    cursor: url("../images/png-transparent-line-technology-line-angle-art-artwork") 0 0, pointer;
+}
+
+.clans {
+    position: relative;
+}
+
+.Sasuke {
+    position: absolute;
+    width: 350px;
+    height: auto;
+    left: 30px;
+    bottom: 0;
+    opasity: 0;
+    pointer-events: none;
+    transition: opacity 2s ease,
+                mask-image 2s ease;
+    mask-image: linear-gradient(
+            to top,
+            black 0%,
+            transparent 0%
+    );
+}
+
+.clans:has(.uchiha:hover) .sasuke {
+    opacity: 1;
 }
