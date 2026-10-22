@@ -1,4 +1,5 @@
 .clans {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,27 +33,72 @@
     cursor: url("../images/png-transparent-line-technology-line-angle-art-artwork") 0 0, pointer;
 }
 
-.clans {
-    position: relative;
+.sasuke-reveal {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 40%;
+    height: 100vh;
+
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+    transition: opacity 0.9s ease;
 }
 
-.Sasuke {
-    position: absolute;
-    width: 350px;
-    height: auto;
-    left: 30px;
-    bottom: 0;
-    opasity: 0;
-    pointer-events: none;
-    transition: opacity 2s ease,
-                mask-image 2s ease;
-    mask-image: linear-gradient(
-            to top,
+.sasuke {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: bottom center;
+
+    mask-image: radial-gradient(
+            circle at 50% 45%,
             black 0%,
-            transparent 0%
+            black 12%,
+            transparent 80%
     );
 }
 
-.clans:has(.uchiha:hover) .sasuke {
+.ink-mask {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.clans:has(.uchiha:hover) .sasuke-reveal {
+    opacity: 1;
+}
+
+.naruto-reveal {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    width: 40%;
+    height: 100vh;
+
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+    transition: opacity 0.9s ease;
+}
+
+.naruto {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: bottom center;
+
+    mask-image: radial-gradient(
+            circle at 50% 45%,
+            black 0%,
+            black 12%,
+            transparent 70%
+    );
+}
+
+.clans:has(.uzumaki:hover) .naruto-reveal {
     opacity: 1;
 }
